@@ -29,6 +29,8 @@ powershell -ExecutionPolicy Bypass -File .\install-service.ps1 -StartNow
 ## Команды из onAir в Companion
 
 Отправка выполняется через **«Команды посылки сообщений»** в onAir.
+Работа проверялась с транспортом `http` (`companion_command_transport: "http"`).
+Для других вариантов транспорта может потребоваться дополнительная доработка и тестирование.
 
 ```text
 MACHINENAME/BridgeQueue OnAir1.Mirror COMPANION:/api/location/3/0/1/press
