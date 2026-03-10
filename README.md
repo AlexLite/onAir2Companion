@@ -48,6 +48,8 @@ powershell -ExecutionPolicy Bypass -File .\remove-service.ps1
 
 ## Передача команд из onAir в Companion
 
+Отправка выполняется через механизм **«Команды посылки сообщений»** в onAir.
+
 В `config.json` включите маршрутизацию:
 
 ```json
@@ -62,9 +64,13 @@ powershell -ExecutionPolicy Bypass -File .\remove-service.ps1
 Примеры команд из onAir:
 
 ```text
-COMPANION:/api/location/3/0/1/press
-COMPANION:POST /api/location/3/0/1/style {"text":"LIVE"}
+MACHINENAME/BridgeQueue OnAir1.Mirror COMPANION:/api/location/3/0/1/press
+MACHINENAME/BridgeQueue OnAir1.Mirror COMPANION:POST /api/location/3/0/1/style {"text":"LIVE"}
 ```
+
+Где:
+- `MACHINENAME` — имя машины, на которой работает bridge.
+- `BridgeQueue` — значение `local_queue` из `config.json`.
 
 ## Структура проекта
 

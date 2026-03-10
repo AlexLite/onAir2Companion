@@ -25,3 +25,12 @@ cd release\server
 cd "release\server\run to service"
 powershell -ExecutionPolicy Bypass -File .\install-service.ps1 -StartNow
 ```
+
+## Команды из onAir в Companion
+
+Отправка выполняется через **«Команды посылки сообщений»** в onAir.
+
+```text
+MACHINENAME/BridgeQueue OnAir1.Mirror COMPANION:/api/location/3/0/1/press
+MACHINENAME/BridgeQueue OnAir1.Mirror COMPANION:POST /api/location/3/0/1/style {"text":"LIVE"}
+```

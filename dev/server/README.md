@@ -53,6 +53,17 @@ Shedule.Start
 - `response`
 - `health`
 
+## Команды из onAir в Companion
+
+Используйте в onAir механизм **«Команды посылки сообщений»**.
+
+Примеры:
+
+```text
+MACHINENAME/BridgeQueue OnAir1.Mirror COMPANION:/api/location/3/0/1/press
+MACHINENAME/BridgeQueue OnAir1.Mirror COMPANION:POST /api/location/3/0/1/style {"text":"LIVE"}
+```
+
 ## Установка как сервис
 
 `onAir2Companion.exe` не является native Windows Service binary.
