@@ -1,0 +1,235 @@
+{\rtf1\ansi\ansicpg1251\deff0\nouicompat\deflang1049{\fonttbl{\f0\fswiss\fcharset204{\*\fname Arial;}Arial CYR;}{\f1\fswiss\fcharset0 Arial;}{\f2\fswiss\fprq2\fcharset204{\*\fname Arial;}Arial CYR;}}
+{\*\generator Riched20 6.3.9600}\viewkind4\uc1 
+\pard\f0\fs20 OnAir script command description. \par
+\f1\lang1033 Update 21 august 2015\f0\lang1049\par
+\par
+\f1\lang1033 Keyword case is ignored.\f0\lang1049\par
+\par
+\par
+\ul Service commands. Inserted before other commands what have corresponding bits in shedule setted.\par
+\b\par
+\ulnone logoOn\par
+\f1\lang1033 -- \b0 Turn logotype on\f0\lang1049\par
+\b\par
+logoOff\par
+\f1\lang1033 -- \b0 Turn logotype off\f0\lang1049\par
+\b\par
+titlingOn\b0\par
+\b\f1\lang1033 -- \b0 Turn titling on\f0\lang1049\par
+\b\par
+titlingOff\par
+\f1\lang1033 -- \b0 Turn titling off\f0\lang1049\par
+\par
+\f1\lang1033\par
+\ul Block commands.\f0\lang1049\par
+\ulnone\par
+\b\f1\lang1033 wait operator 0 \b0 Any comment\par
+-- Start of block. Shedule paused until operator press 'Start'. Zero must be present\par
+\par
+\b wait follow 0 \b0 Any comment\par
+-- Start of block. Shedule continues to run. Zero must be present\par
+\par
+\b wait time \b0 12:00:00.00 \b [\b0 5.00\b ] \b0 Any comment\par
+-- Start of block. Passive waiting. \par
+Shedule waits until current time become equal or later than setted then continues.\par
+Value in square brakets ignored but should have correct format\f0\lang1049\par
+\par
+\b\f1\lang1033 wait time \b0 12:00:00.00 \b [\b0 5.00\b ] active \b0 Any comment\par
+-- Start of block. Active waiting. \par
+If shedule reached this command before setted time it waits.\par
+If shedule is executing previous block and setted time is reached then previous block would interrupted and this starts.\par
+Value in square brakets sets duration in seconds what sufficient for following command to prepare.\f0\lang1049\par
+\par
+\b\f1\lang1033 repeat block\b0\par
+-- Repeat current block\f0\lang1049\par
+\par
+\b\f1\lang1033 repeat script\b0\par
+-- Repeat whole script\f0\lang1049\par
+\par
+\b\f1\lang1033 switch schedule\b0\par
+-- Switch to other schedule\f0\lang1049\par
+\par
+\par
+\ul\f1\lang1033 Communication commands\par
+\ulnone\par
+\b shout\b0  Some command string\par
+-- Send command to anybody listen\par
+\f0\lang1049\par
+\b\f1\lang1033 waitshout\b0  Some command string\par
+-- Repeatedly send command to anybody listen while somebody reply '1' \par
+\f0\lang1049\par
+\b\f1\lang1033 gpishout\b0  \b gpi\b0\f0\lang1049  \b\{\b0 GPI_On_COM1_0_Output\b\}\b0  \f1\lang1033 Meaningful command name\par
+-- Pulse GPI signal with setted identifier\par
+\f0\lang1049\par
+\b\f1\lang1033 gpishout\b0  \b gpion\b0\f0\lang1049  \b\{\b0 GPI_On_COM1_0_Output\b\}\b0  \f1\lang1033 Meaningful command name\par
+-- Turn GPI signal to active state \par
+\f0\lang1049\par
+\b\f1\lang1033 gpishout\b0  \b gpioff\b0\f0\lang1049  \b\{\b0 GPI_On_COM1_0_Output\b\}\b0  \f1\lang1033 Meaningful command name\par
+-- Turn GPI signal to passive state\par
+\f0\lang1049\par
+\b gpiwaitshout\b0  \b\f1\lang1033 gpi\b0\f0\lang1049  \b\{\b0 GPI_On_COM1_0_Input\b\}\b0  \f1\lang1033 Meaningful command name\f0\lang1049\par
+\f1\lang1033 -- Wait GPI signal with setted identifier\par
+\b\f0\lang1049\par
+gpiwaitshout\b0  \b\f1\lang1033 gpi\b0\f0\lang1049  \b\{\b0 GPI_On_COM1_0_Input\b\}\b0  \b\f1\lang1033 skipblock \b0 Meaningful command name\f0\lang1049\par
+\f1\lang1033 -- Wait GPI signal with setted identifier, skip current block on timeout\par
+\par
+\b messageshout "\b0 Meaningful command name\b "\b0  Machine\b /\b0 Queue Subject Text\par
+-- Send SLMessageService command \par
+\f0\lang1049\par
+\ul\f1\lang1033 Video commands\ulnone\par
+\par
+\b video1\b0  0:00:01.00 \f2\lang1049 Any comment\f1\lang1033\par
+\b video2\b0  0:00:01.00 \b [\b0 0.10\b ] \b0\f2\lang1049 Any comment\f1\lang1033\par
+\b video3\b0  0 \b [\b0 0.10\b ] \b0\f2\lang1049 Any comment\f1\lang1033\par
+\b video4\b0  0 \b [\b0 0.10\b ] \b0\f2\lang1049 Any comment\f1\lang1033\par
+\b video5\b0  0 \b [\b0 0.10\b ] \b0\f2\lang1049 Any comment\f1\lang1033\par
+\b video6\b0  0 \b [\b0 0.10\b ] \b0\f2\lang1049 Any comment\f1\lang1033\par
+-- Show input video. \par
+Duration sets time interval to start of following command. Zero duration can be setted by single '0'.\par
+Value in square brackets sets crossfade duration and may be absent.\par
+\par
+\b default1\b0  0:00:01.00 \par
+\b default2\b0  0:00:01.00 \b [\b0 0.10\b ]\b0\par
+-- Show default picture. \par
+Duration sets time interval to start of following command. Zero duration can be setted by single '0'.\par
+Value in square brackets sets crossfade duration and may be absent.\par
+\par
+\b picture\b0  0:00:01.00 \b [\b0 0.10\b ]\b0  File name (relative or absolute)\par
+\b pictureex\b0  0:00:01.00 \b [\b0 0.10\b ]\b0  \b "\b0 Schedule title\b "\b0  File name (relative or absolute)\par
+-- Show picture file. \par
+Duration sets time interval to start of following command. Zero duration can be setted by single '0'.\par
+Value in square brackets sets crossfade duration and may be absent.\par
+\par
+\b movie\b0  \b <\b0 0:00:01:00\b >\b0  0:00:11.00 \b [\b0 0.10\b ]\b0  File name (relative or absolute)\par
+\b movie\b0  \b <\b0 0:00:01:00\b >\b0  \b (\b0 0:00:11.00\b )\b0  \b [\b0 0.10\b ]\b0  File name (relative or absolute)\par
+\b movie\b0  0:00:11.00 \b [\b0 0.10\b ]\b0  File name (relative or absolute)\par
+\b movie\b0  \b (\b0 0:00:11.00\b )\b0  File name (relative or absolute)\par
+\b movieex\b0  \b (\b0 0:00:11.00\b )\b0  \b "\b0 Schedule title\b "\b0  File name (relative or absolute)\par
+-- Show movie file (avi, mpegs or tml (AV Studio project)). \par
+Timecode in angle brackets is optional in-point\par
+Duration in parenthesis signs that following command would not wait finish of this.\par
+Value in square brackets sets crossfade duration and may be absent.\par
+If in-point is present then fragment will be bounded by actual duration of file.\par
+Without in-point duration will be replaced by actual duration of file.\par
+\par
+\b rpmfragment \b0  \b <\b0 0:00:01:00\b >\b0  0:00:11.00 \b [\b0 0.10\b ]\b0  Fragment name \f0\lang1049\{7EAE7488-F7FC-4634-A932-97C3FC1979D1\}\f1\lang1033\par
+\b rpmfragment\b0  \b (\b0 0:00:11.00\b )\b0  Fragment name \f0\lang1049\{7EAE7488-F7FC-4634-A932-97C3FC1979D1\}\f1\lang1033\par
+-- Show RPM clip. \par
+Timecode in angle brackets is optional in-point\par
+Duration in parenthesis signs that following command would not wait finish of this.\par
+Value in square brackets sets crossfade duration and may be absent.\par
+Actual duration and name of clip will be quered from PostPlay server by GUID\par
+\par
+\par
+\ul Sound commands\ulnone\par
+\par
+\b sound\b0  \b <\b0 0:00:01:00\b >\b0  \b (\b0 0:00:11.00\b )\b0  File name (relative or absolute)\par
+\b sound\b0  0:00:11.00 File name (relative or absolute)\par
+\b soundex\b0  0:00:11.00 \b "\b0 Schedule title\b "\b0  File name (relative or absolute)\par
+-- Play sound file (wav or tml (AV Studio project)). \par
+Timecode in angle brackets is optional in-point\par
+Duration in parenthesis signs that following command would not wait finish of this.\par
+If in-point is present then fragment will be bounded by actual duration of file.\par
+Without in-point duration will be replaced by actual duration of file.\par
+\par
+\b soundOff\b0  0:00:01.00 \par
+-- Stop playing sound file. \par
+Duration sets time interval to start of following command. Zero duration can be setted by single '0'.\par
+\f0\lang1049\par
+\par
+\ul\f1\lang1033 Fullscreen titling commands\ulnone\par
+\par
+\b titlePicture\b0  0:00:01.00 \b [\b0 0.10\b ]\b0  File name (relative or absolute)\par
+\b titlePictureEx\b0  0:00:01.00 \b [\b0 0.10\b ]\b0  \b "\b0 Schedule title\b "\b0  File name (relative or absolute)\par
+-- Show title picture file. \par
+Duration sets time interval to start of following command. Zero duration can be setted by single '0'.\par
+Value in square brackets sets fade-in duration and may be absent.\par
+\f0\lang1049\par
+\b\f1\lang1033 titleMovie\b0  0:00:11.00 \b [\b0 0.10\b ]\b0  File name (relative or absolute)\par
+\b titleMovie\b0  \b (\b0 0:00:11.00\b )\b0  File name (relative or absolute)\par
+\b titleMovieEx\b0  \b (\b0 0:00:11.00\b )\b0  \b "\b0 Schedule title\b "\b0  File name (relative or absolute)\par
+-- Show title movie file (avi or tml (AV Studio project)).  \par
+Duration in parenthesis signs that following command would not wait finish of this.\par
+Value in square brackets sets fade-in duration and may be absent.\par
+Duration will be replaced by actual duration of file.\par
+\f0\lang1049\par
+\b\f1\lang1033 titleScript\b0  0:00:11.00 \b [\b0 0.10\b ]\b0  File name (relative or absolute)\par
+\b titleScript\b0  \b (\b0 0:00:11.00\b )\b0  File name (relative or absolute)\par
+\b titleScriptEx\b0  \b (\b0 0:00:11.00\b )\b0  \b "\b0 Schedule title\b "\b0  File name (relative or absolute)\par
+-- Show title script file (spt).  \par
+Duration in parenthesis signs that following command would not wait finish of this.\par
+Value in square brackets sets fade-in duration and may be absent.\par
+Duration will be replaced by actual duration of file.\par
+\f0\lang1049\par
+\b\f1\lang1033 titleOff\b0  0:00:01.00 \par
+\b titleOff\b0  0:00:01.00 \b [\b0 0.10\b ]\b0\par
+-- Clear fullscreen titles. \par
+Duration sets time interval to start of following command. Zero duration can be setted by single '0'.\par
+Value in square brackets sets fade-out duration and may be absent.\par
+\f0\lang1049\par
+\par
+\ul\f1\lang1033 Title objects commands\ulnone\par
+\par
+\b titleObjLoad\b0  \b\{\b0 ObjectName\b\}\b0  0:00:17.64 \b [\b0 0.10\b ]\b0  File name (relative or absolute)\par
+\b titleObjLoad\b0  \b\{\b0 ObjectName\b\}\b0  \b (\b0 0:00:17.64\b )\b0  File name (relative or absolute)\par
+\b titleObjLoadEx\b0  \b\{\b0 ObjectName\b\}\b0  \b (\b0 0:00:17.64\b )\b0  \b "\b0 Schedule title\b "\b0  File name (relative or absolute)\par
+-- Load task file to title object.\par
+State of looped object don't change. State of not-looped object sets to 'On'.\par
+Duration in parenthesis signs that following command would not wait finish of this.\par
+Value in square brackets sets fade-in duration and may be absent.\par
+Duration will be replaced by actual duration of file or zero for looped object.\par
+\par
+\b titleObjReset \{\b0 ObjectName\b\}\b0  0\par
+-- Load null task to title object.\par
+\par
+\b titleObjOn\b0  \b\{\b0 ObjectName\b\}\b0  0:00:03.64\par
+\b titleObjOff \{\b0 ObjectName\b\}\b0  0:00:03.64 \b [\b0 0.10\b ]\b0\par
+\b titleObjAbort \{\b0 ObjectName\b\}\b0  0:00:03.64 \b [\b0 0.10\b ]\b0\par
+-- Set title object state to On and Off or abort title object.\par
+Duration sets time interval to start of following command. Zero duration can be setted by single '0'.\par
+Value in square brackets sets fade-in/fade-out duration and may be absent.\par
+\par
+\b titleObjGroupOn\b0  \b\{\b0 Object1,Object2...\b\}\b0  0:00:03.64 \f2\lang1049 Any comment\f1\lang1033\par
+\b titleObjGroupOff \{\b0 Object1,Object2...\b\}\b0  0:00:03.64 \b [\b0 0.10\b ] \b0\f2\lang1049 Any comment\f1\lang1033\par
+\b titleObjGroupAbort \{\b0 Object1,Object2...\b\}\b0  0:00:03.64 \b [\b0 0.10\b ] \b0\f2\lang1049 Any comment\f1\lang1033\par
+-- Set several title objects state to On and Off or abort title objects.\par
+Duration sets time interval to start of following command. Zero duration can be setted by single '0'.\par
+Value in square brackets sets fade-in/fade-out duration and may be absent.\par
+\par
+\b titleObjWait\b0  \b\{\b0 ObjectName\b\}\b0  0:00:05.00\par
+-- Wait for finish of un-looped title object.\par
+Duration sets time interval by what following command starts before finishing of object.\par
+\par
+\par
+\ul Other commands\ulnone\par
+\par
+\b pauseAllFinish\b0  0:00:05.00\par
+-- Wait for finish of all playing command except title objects.\par
+Duration sets time interval by what following command starts before finishing of playing commands.\par
+\f0\lang1049\par
+\b\f1\lang1033 pause\b0  0:00:01.00 \par
+-- Do nothing. \par
+Duration sets time interval to start of following command. Zero duration can be setted by single '0'.\par
+\f0\lang1049\par
+\b\f1\lang1033 auxOn\b0  0:00:01.00 \par
+\b auxOff\b0  0:00:01.00 \par
+-- Turn On and Off auxillary audio input.\par
+Duration sets time interval to start of following command. Zero duration can be setted by single '0'.\par
+\f0\lang1049\par
+\b\f1\lang1033 comment\b0  \b 0\b0  Any comment\par
+-- Do nothing. \par
+Zero must be present\par
+\par
+\b markStart \{\b0 MarkName\b\} 0\b0  Any comment\par
+--Start mark of fragment\par
+Zero must be present\par
+\par
+\b markStop \{\b0 MarkName\b\} 0\b0  Any comment\par
+-- Stop mark  of fragment\par
+Zero must be present\par
+\f0\lang1049\par
+\par
+\par
+\par
+}
+ 

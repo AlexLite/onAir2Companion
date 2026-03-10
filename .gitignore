@@ -1,0 +1,29 @@
+﻿# Build output
+dev/server/build/
+**/out/
+
+# Node.js
+**/node_modules/
+dev/companion-module/dist/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Visual Studio / CMake
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+CMakeUserPresets.json
+
+# Runtime/test artifacts
+*.sqlite
+*.db
+*.log
+
+# OS files
+Thumbs.db
+.DS_Store
+

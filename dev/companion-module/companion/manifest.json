@@ -1,0 +1,25 @@
+{
+  "id": "onair-bridge",
+  "name": "onair-bridge",
+  "shortname": "onair-bridge",
+  "description": "onAir bridge TCP client",
+  "version": "0.1.0",
+  "license": "MIT",
+  "repository": "https://example.invalid/onair-bridge",
+  "bugs": "https://example.invalid/onair-bridge/issues",
+  "maintainers": [
+    {
+      "name": "Local Dev"
+    }
+  ],
+  "legacyIds": [],
+  "runtime": {
+    "type": "node18",
+    "api": "nodejs-ipc",
+    "apiVersion": "1.8.0",
+    "entrypoint": "../main.js"
+  },
+  "manufacturer": "SoftLab-Nsk",
+  "products": ["onAir Bridge"],
+  "keywords": ["onair", "bridge", "tcp"]
+}
