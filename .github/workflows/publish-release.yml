@@ -1,0 +1,27 @@
+name: Publish Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Create Release Package
+        run: |
+          mkdir -p release_package
+          cp -r release/server/* release_package/ 2>/dev/null || true
+          cp -r release/companion/* release_package/ 2>/dev/null || true
+          zip -r onAir2Companion-${{ github.ref_name }}.zip release_package
+      
+      - name: Upload to Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: onAir2Companion-${{ github.ref_name }}.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
