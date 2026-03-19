@@ -1,5 +1,7 @@
 ﻿# onAir2Companion
 
+English version: [README.en.md](README.en.md)
+
 Интеграция **Soft-Lab FDOnAir** с **Bitfocus Companion** через **SLMessageServer** (bridge).
 
 > По умолчанию конфигурация рассчитана на запуск всех компонентов на одном `localhost`.
@@ -129,4 +131,5 @@ Companion увидит модуль `companion-module`.
 ## Примечание
 
 Часть материалов проекта (документация и отдельные технические правки) была подготовлена с помощью ИИ-агентов.
+
 
